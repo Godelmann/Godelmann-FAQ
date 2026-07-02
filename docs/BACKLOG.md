@@ -12,22 +12,23 @@
 
 ## Audit 2026-07-02 (Multi-Agent, verifiziert)
 
-### P2
+> Multi-Agent-Audit (Repo + Live Test/Prod). **Detail je Finding: eigene `docs/FINDING-<ID>.md`** (verlinkt).
+> Ergebnis: **5 Findings** — P1: 0 · P2: 3 · P3: 2. Erledigt: **0/5** (Stand 2026-07-02).
 
-| Status | Aufgabe | Details |
+### 🟠 P2
+
+| ID | Finding | Status |
 |---|---|---|
-| ⬚ | CLAUDE.md Tech-Stack-Drift beheben | `CLAUDE.md` behauptet „React 18 + Vite + TypeScript + Tailwind + shadcn/ui + SPASS" und „Shared Supabase mit GoCreate (Port 8010)" — tatsächlich ist das Projekt ein vanilla Vite-Scaffold mit React 19.2.4 ohne Tailwind, shadcn/ui, SPASS-Client oder Supabase-Anbindung (dependencies: nur `react` + `react-dom`). Doku an Realität angleichen oder als Ziel-Stack kennzeichnen. |
-| ⬚ | Dev-Port 5009 in `vite.config.ts` konfigurieren | CLAUDE.md („Dev-Server auf http://localhost:5009") und `platform-control/docs/PORTS.md` weisen Port 5009 zu; `vite.config.ts` enthält aber kein `server: { port: 5009 }` — Vite startet auf Default 5173. Port-Paarung 5xxx/9xxx des Dev-First-Workflows herstellen. |
-| ⬚ | npm audit: 1 high (vite 8.0.1) + 3 moderate fixen | vite 8.0.0–8.0.15 hat mehrere Advisories (GHSA-4w7w-66w2-5vf9 Path Traversal, GHSA-v2wj-q39q-566r `fs.deny`-Bypass, GHSA-p9ff-h696-f583 Arbitrary File Read via Dev-Server-WebSocket). Nur Dev-Server-relevant, aber der Dev-First-Workflow forwardet Ports. Fix via `npm audit fix`; dazu moderate: brace-expansion, js-yaml, postcss. |
+| [FAQ-P2-01](FINDING-FAQ-P2-01.md) | CLAUDE.md Tech-Stack-Drift: React 19 vanilla Scaffold statt behauptetem Tailwind/shadcn/SPASS/Supabase-Stack | ⬚ offen |
+| [FAQ-P2-02](FINDING-FAQ-P2-02.md) | Dev-Port 5009 in vite.config.ts konfigurieren (Vite startet auf Default 5173) | ⬚ offen |
+| [FAQ-P2-03](FINDING-FAQ-P2-03.md) | npm audit: 1 high (vite 8.0.x) + 3 moderate via `npm audit fix` beheben | ⬚ offen |
 
-### P3
+### 🟢 P3
 
-| Status | Aufgabe | Details |
+| ID | Finding | Status |
 |---|---|---|
-| ⬚ | README.md projektspezifisch machen | README ist das unveränderte „React + TypeScript + Vite"-Template — ohne Godelmann-FAQ-Zweck, Stages oder Verweis auf `docs/BACKLOG.md`. |
-| ⬚ | Scaffold-Platzhalter ersetzen | `index.html` hat `lang="en"` und Platzhalter-Title `godelmann-faq`; `src/App.tsx` ist der Vite-Demo-Counter. Für den ersten Nutzen fehlen: `lang="de"`, echter Titel, FAQ-UI, Supabase/SPASS-Anbindung, Edge-Function `faq-public`, Embed-Widget (siehe Sprint-Plan Sub-App 2 im GoCreate-Websites-Backlog). |
-
-_Keine P1-Findings._
+| [FAQ-P3-01](FINDING-FAQ-P3-01.md) | README.md projektspezifisch machen (unveränderter Vite-Template-Text, kein FAQ-Zweck/Stages/BACKLOG-Verweis) | ⬚ offen |
+| [FAQ-P3-02](FINDING-FAQ-P3-02.md) | Scaffold-Platzhalter ersetzen: lang=en, Vite-Counter, keine FAQ-UI/Supabase/Edge-Function | ⬚ offen |
 
 ---
 
