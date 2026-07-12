@@ -16,7 +16,7 @@ für godelmann.de — **eigener Hostname**, Integration per Script-Tag.
 ```
 godelmann.de  ──<script src="https://faq-test.godelmann.net/faq-widget.v1.js">──▶
   Custom Element <godelmann-faq>  ──GET /api/faq?lang=de[&category=…]──▶
-    godelmann-faq-server (eigener SPASS-Server, platform-test, PORT 9009)
+    godelmann-faq-server (eigener SPASS-Server, platform-test, PORT 3008)
       └─ liest published+approved faq_entries aus GoCreate-Supabase
          (Service-Key server-side, 5-min-Cache) — KEIN User-Login
 ```

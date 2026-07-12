@@ -31,5 +31,5 @@ godelmann.de-Agentur; der Vite-Dev-Server liefert unter `/api/faq` Mock-Daten
 
 ## Stages
 
-- **Test:** `https://faq-test.godelmann.net` (Caddy-vhost auf platform-test, Server-Port 9009) — geplant
+- **Test:** `https://faq-test.godelmann.net` (Caddy-vhost auf platform-test, Server-Port 3008) — geplant
 - **Prod:** Hostname nach Godelmann-DNS-Freigabe (z. B. `faq.godelmann.de`)

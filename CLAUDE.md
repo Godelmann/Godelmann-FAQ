@@ -14,7 +14,7 @@ npm run lint         # ESLint
 ## Tech Stack
 - Vanilla TypeScript + Vite (lib-mode) — KEIN React/Tailwind/shadcn, keine Runtime-Dependencies
 - Entry `src/faq-widget.ts` -> ein ES-Modul `dist/faq-widget.v1.js` (versionierte URL, Breaking -> v2)
-- Daten: `GET {api-base}/api/faq?lang=…[&category=…]` vom godelmann-faq-server (platform-test :9009)
+- Daten: `GET {api-base}/api/faq?lang=…[&category=…]` vom godelmann-faq-server (platform-test :3008)
 - Domain: Test `faq-test.godelmann.net` (geplant), Prod nach DNS-Freigabe
 - GitHub: Godelmann/Godelmann-FAQ
 ## Doku-Pflege (PFLICHT)

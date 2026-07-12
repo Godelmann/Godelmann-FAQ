@@ -63,7 +63,7 @@
 
 | Status | Aufgabe | Details |
 |---|---|---|
-| ⬚ | Server + Ausspielung | `godelmann-faq-server` (SPASS, platform-test :9009), Caddy-vhost `faq-test.godelmann.net` + CORS, DIST_DIR-Auslieferung des Widgets, E2E-Abnahme gem. `ANFORDERUNGEN.md`. |
+| ⬚ | Server + Ausspielung | `godelmann-faq-server` (SPASS, platform-test :3008), Caddy-vhost `faq-test.godelmann.net` + CORS, DIST_DIR-Auslieferung des Widgets, E2E-Abnahme gem. `ANFORDERUNGEN.md`. |
 | ⬚ | Inhalte/Kuratierung | GoCreate Sub-App 2: DB `faq_entries`, UI-Editor, Publish-Flow (siehe GoCreate-Websites-Backlog). |
 
 ---
