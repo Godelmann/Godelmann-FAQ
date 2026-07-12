@@ -81,3 +81,9 @@ nachgetragen (vom `/do-everything`-Frontend-Release-Sync-Check erzwungen — Mem
 - Belege: `docs/FINDINGS-2026-07-12.md` · Ticket/Tracker: `docs/AUDIT-2026-07-12.md` · Org-Register: `BLUEITS-GmbH/.xoder/FINDINGS.md`
 
 **Naechster Schritt:** User-Review → Priorisierung → Fix; Jira erst nach Review. Erledigtes als „resolved" markieren.
+
+## Offene Punkte (Backlog)
+
+| # | Punkt | Detail |
+|---|---|---|
+| 1 | **EN-FAQs** | Erst NACH Spezialisten-Approval der 688 deutschen Drafts (Plan-Entscheid 2026-07-12: "EN spaeter aus approbierten DE"): approbierte DE-Eintraege nach demselben Fabrik-Muster (Generierung + adversariale Verifikation) uebersetzen, `lang=en` in `faq_entries`, Widget kann per `lang`-Attribut umschalten. |
