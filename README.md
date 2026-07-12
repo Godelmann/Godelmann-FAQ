@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# Godelmann-FAQ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Öffentliches FAQ-Webmodul für **godelmann.de** — Web Component
+`<godelmann-faq>` nach WHATWG-Standard (Custom Elements + Shadow DOM),
+**Vanilla TypeScript ohne Framework-Dependency**. Vite baut das Widget als
+einzelnes ES-Modul `dist/faq-widget.v1.js` (< 60 kB gzip), das vom
+`godelmann-faq-server` ausgeliefert und per Script-Tag auf godelmann.de
+eingebunden wird.
 
-Currently, two official plugins are available:
+Die Inhalte (kuratierte Fachfragen + Antworten) entstehen in **GoCreate**
+und werden über `GET /api/faq?lang=de[&category=…]` ausgespielt.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Kommandos
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev      # Standalone-Preview auf http://localhost:5009 (mit /api/faq-Mock)
+npm run build    # tsc --noEmit + Vite lib-build -> dist/faq-widget.v1.js
+npm run lint     # ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Die Preview (`index.html`) dient zugleich als Referenz-Einbindung für die
+godelmann.de-Agentur; der Vite-Dev-Server liefert unter `/api/faq` Mock-Daten
+(nur Dev, siehe `vite.config.ts`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Doku
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [`docs/ANFORDERUNGEN.md`](docs/ANFORDERUNGEN.md) — verbindliche Spezifikation (Architektur, API-Vertrag, Abnahme)
+- [`docs/EINBINDUNG.md`](docs/EINBINDUNG.md) — Integrations-Doku für die Agentur (Snippet, Attribute, CSS-Props, Events, CSP)
+- [`docs/BACKLOG.md`](docs/BACKLOG.md) — Release-/Feature-Log
+- `CLAUDE.md` — Repo-Kontext für Claude Code
+
+## Stages
+
+- **Test:** `https://faq-test.godelmann.net` (Caddy-vhost auf platform-test, Server-Port 9009) — geplant
+- **Prod:** Hostname nach Godelmann-DNS-Freigabe (z. B. `faq.godelmann.de`)

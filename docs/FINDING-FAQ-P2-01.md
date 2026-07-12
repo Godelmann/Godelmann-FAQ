@@ -6,7 +6,7 @@
 | **Schweregrad** | P2 |
 | **Bereich** | Doku |
 | **Entdeckt** | 2026-07-02 (Multi-Agent-Audit) |
-| **Status** | OPEN |
+| **Status** | RESOLVED (2026-07-12, v0.0.1) — CLAUDE.md-Stack-Abschnitt auf den realen Stand korrigiert (Vanilla-TS-Web-Component, Vite lib-mode, kein React/Tailwind/shadcn/Supabase) |
 
 ## Symptom
 `CLAUDE.md` beschreibt einen Tech-Stack, den das Repo nicht besitzt. Behauptet werden „React 18 + Vite + TypeScript + Tailwind + shadcn/ui + SPASS" sowie „Shared Supabase mit GoCreate (Port 8010)". Tatsächlich ist `godelmann-faq` ein vanilla Vite-Scaffold mit React 19.2.4 und ausschließlich `react` + `react-dom` als Runtime-Dependencies — ohne Tailwind, shadcn/ui, SPASS-Client oder Supabase-Anbindung.

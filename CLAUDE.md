@@ -1,18 +1,21 @@
 # Godelmann-FAQ
 
-FAQ-System für godelmann.de — React/Vite/TypeScript Frontend.
+Öffentliches FAQ-Webmodul für godelmann.de — Web Component `<godelmann-faq>` (WHATWG Custom
+Elements + Shadow DOM), Vanilla TypeScript **ohne Framework-Dependency**. Verbindliche
+Spezifikation: `docs/ANFORDERUNGEN.md`; Agentur-Doku: `docs/EINBINDUNG.md`.
 
 ## Common Commands
 ```bash
-npm run dev          # Dev-Server auf http://localhost:5009
-npm run build        # Production Build
+npm run dev          # Standalone-Preview auf http://localhost:5009 (strictPort, /api/faq-Mock)
+npm run build        # tsc --noEmit + Vite lib-build -> dist/faq-widget.v1.js (< 60 kB gzip)
 npm run lint         # ESLint
 ```
 
 ## Tech Stack
-- React 18 + Vite + TypeScript + Tailwind + shadcn/ui + SPASS
-- Shared Supabase mit GoCreate (Port 8010)
-- Domain: (noch nicht zugewiesen)
+- Vanilla TypeScript + Vite (lib-mode) — KEIN React/Tailwind/shadcn, keine Runtime-Dependencies
+- Entry `src/faq-widget.ts` -> ein ES-Modul `dist/faq-widget.v1.js` (versionierte URL, Breaking -> v2)
+- Daten: `GET {api-base}/api/faq?lang=…[&category=…]` vom godelmann-faq-server (platform-test :9009)
+- Domain: Test `faq-test.godelmann.net` (geplant), Prod nach DNS-Freigabe
 - GitHub: Godelmann/Godelmann-FAQ
 ## Doku-Pflege (PFLICHT)
 

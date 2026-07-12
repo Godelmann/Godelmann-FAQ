@@ -6,7 +6,7 @@
 | **Schweregrad** | P3 |
 | **Bereich** | Scaffold/UI |
 | **Entdeckt** | 2026-07-02 (Multi-Agent-Audit) |
-| **Status** | OPEN |
+| **Status** | RESOLVED (2026-07-12, v0.0.1) — Scaffold komplett ersetzt: `<godelmann-faq>`-Widget statt Vite-Counter, index.html lang=de + echter Titel; Architektur inzwischen per ANFORDERUNGEN.md ohne Supabase/Edge-Function (eigener SPASS-Server) |
 
 ## Symptom
 Das Repo `godelmann-faq` ist unveränderter Vite-React-Scaffold. `index.html` deklariert `lang="en"` und trägt den Platzhalter-Titel `godelmann-faq`. `src/App.tsx` ist die Vite-Demo-Counter-Seite (State-Counter, Vite/React-Logos, „Explore Vite"-Links) statt einer FAQ-Oberfläche. Es existiert keine Backend-Anbindung.

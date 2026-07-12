@@ -1,13 +1,86 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>godelmann-faq</title>
+    <meta
+      name="description"
+      content="Standalone-Preview und Referenz-Einbindung des FAQ-Widgets <godelmann-faq> für godelmann.de."
+    />
+    <title>FAQ-Widget | GODELMANN — Preview</title>
+    <style>
+      body {
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+        max-width: 56rem;
+        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        color: #1d1d1f;
+        background: #fafafa;
+        line-height: 1.55;
+      }
+      h1 { font-size: 1.5rem; }
+      h2 { margin-top: 3rem; font-size: 1.15rem; }
+      p.hint { color: #5f5f63; font-size: 0.95rem; }
+      code {
+        padding: 0.1em 0.35em;
+        font-size: 0.9em;
+        background: #eee;
+        border-radius: 4px;
+      }
+      .themed {
+        --gdm-faq-accent: #1a6b4a;
+        --gdm-faq-radius: 2px;
+        --gdm-faq-font: Georgia, 'Times New Roman', serif;
+        --gdm-faq-max-width: 40rem;
+      }
+      #event-log {
+        padding: 0.75rem 1rem;
+        max-height: 10rem;
+        overflow: auto;
+        font-family: ui-monospace, monospace;
+        font-size: 0.8rem;
+        background: #1d1d1f;
+        color: #d5f5d5;
+        border-radius: 8px;
+      }
+    </style>
+    <!-- Dev: TypeScript-Quelle als Modul. Produktion (Agentur-Snippet):
+         <script type="module" src="https://faq-test.godelmann.net/faq-widget.v1.js"></script> -->
+    <script type="module" src="/src/faq-widget.ts"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <h1>&lt;godelmann-faq&gt; — Standalone-Preview</h1>
+    <p class="hint">
+      Referenz-Einbindung für die godelmann.de-Agentur — siehe
+      <code>docs/EINBINDUNG.md</code>. Der Vite-Dev-Server (Port 5009) liefert
+      unter <code>/api/faq</code> Mock-Daten, damit die Preview ohne laufenden
+      FAQ-Server funktioniert.
+    </p>
+
+    <h2>1. Standard-Einbindung (alle Kategorien, Suche + Tabs)</h2>
+    <godelmann-faq lang="de"></godelmann-faq>
+
+    <h2>2. Auf eine Kategorie fixiert (<code>category="verlegung"</code>)</h2>
+    <godelmann-faq lang="de" category="verlegung"></godelmann-faq>
+
+    <h2>3. Theming über CSS-Custom-Properties</h2>
+    <p class="hint">
+      Beispiel: <code>--gdm-faq-accent: #1a6b4a; --gdm-faq-radius: 2px;
+      --gdm-faq-font: Georgia, serif; --gdm-faq-max-width: 40rem;</code>
+    </p>
+    <godelmann-faq class="themed" lang="de"></godelmann-faq>
+
+    <h2>Event-Log (<code>gdm-faq:loaded</code> / <code>gdm-faq:opened</code> / <code>gdm-faq:error</code>)</h2>
+    <pre id="event-log" aria-live="polite"></pre>
+    <script type="module">
+      const log = document.getElementById('event-log');
+      for (const name of ['gdm-faq:loaded', 'gdm-faq:opened', 'gdm-faq:error']) {
+        document.addEventListener(name, (e) => {
+          log.textContent += `${name}  ${JSON.stringify(e.detail)}\n`;
+          log.scrollTop = log.scrollHeight;
+        });
+      }
+    </script>
   </body>
 </html>

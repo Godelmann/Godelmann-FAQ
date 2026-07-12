@@ -6,7 +6,7 @@
 | **Schweregrad** | P2 |
 | **Bereich** | Dev-Workflow |
 | **Entdeckt** | 2026-07-02 (Multi-Agent-Audit) |
-| **Status** | OPEN |
+| **Status** | RESOLVED (2026-07-12, v0.0.1) — `server: { port: 5009, strictPort: true }` in vite.config.ts gesetzt |
 
 ## Symptom
 `npm run dev` startet den Vite-Dev-Server auf dem Default-Port **5173** statt auf dem projektzugewiesenen Port **5009**. Die Port-Paarung 5xxx/9xxx des Dev-First-Workflows (Vite 5009 + SPASS-Dev-Binary 9xxx) ist damit nicht hergestellt; die in CLAUDE.md und PORTS.md dokumentierte URL `http://localhost:5009` trifft nicht zu.

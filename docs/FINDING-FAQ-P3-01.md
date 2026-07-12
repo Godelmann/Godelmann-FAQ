@@ -6,7 +6,7 @@
 | **Schweregrad** | P3 |
 | **Bereich** | Doku |
 | **Entdeckt** | 2026-07-02 (Multi-Agent-Audit) |
-| **Status** | OPEN |
+| **Status** | RESOLVED (2026-07-12, v0.0.1) — README.md projektspezifisch neu geschrieben (Zweck, Kommandos, Doku-Verweise, Stages) |
 
 ## Symptom
 Die `README.md` im Repo-Root von `godelmann-faq` ist der unveränderte Vite-Starter-Text („React + TypeScript + Vite"). Sie beschreibt weder den Zweck der Godelmann-FAQ-App noch die Stages (Test/Prod, Ports) und verweist nicht auf `docs/BACKLOG.md`. Wer das Repo öffnet, erhält keine projektspezifische Orientierung.

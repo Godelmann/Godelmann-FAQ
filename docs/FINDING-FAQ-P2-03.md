@@ -6,7 +6,7 @@
 | **Schweregrad** | P2 |
 | **Bereich** | Security/Dependencies |
 | **Entdeckt** | 2026-07-02 (Multi-Agent-Audit) |
-| **Status** | OPEN |
+| **Status** | RESOLVED (2026-07-12, v0.0.1) — `npm audit fix` (vite 8.1.4 u. a.), `npm audit` = 0 vulnerabilities |
 
 ## Symptom
 `npm audit` im FAQ-Frontend meldet offene Advisories: 1 high (vite) und mehrere moderate. Der Live-Check bestätigt aktuell insgesamt 5 Findings (1 high, 3 moderate, 1 low). Der `vite`-Eintrag im lockfile ist verwundbar.
