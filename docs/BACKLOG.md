@@ -63,7 +63,7 @@
 
 | Status | Aufgabe | Details |
 |---|---|---|
-| ✅ | Server + Ausspielung (2026-07-12) | LIVE: `godelmann-faq-server` (SPASS, platform-test :3008, systemd), Caddy-vhost `https://faq-test.godelmann.net` (LE-Cert, CORS nur godelmann.de, Widget-Cache 1h), DIST_DIR liefert `faq-widget.v1.js` + Preview. E2E bestanden: /api/faq liefert approved+published (Publish-Toggle-Roundtrip), CORS-Positiv/Negativ, 688 Draft-Eintraege importiert. Prod-DNS `faq.godelmann.net` -> godelmann-prod angelegt (Serving dort offen). |
+| ✅ | Server + Ausspielung (2026-07-12) | LIVE: `godelmann-faq-server` (SPASS, platform-test :3008, systemd), Caddy-vhost `https://faq-test.godelmann.net` (LE-Cert, CORS nur godelmann.de, Widget-Cache 1h), DIST_DIR liefert `faq-widget.v1.js` + Preview. E2E bestanden: /api/faq liefert approved+published (Publish-Toggle-Roundtrip), CORS-Positiv/Negativ, 688 Draft-Eintraege importiert. **Prod ebenfalls LIVE** (`https://faq.godelmann.net`, godelmann-prod :3008, prod-Supabase mit Migration + 688 Drafts). |
 | ⬚ | Inhalte/Kuratierung | GoCreate Sub-App 2: DB `faq_entries`, UI-Editor, Publish-Flow (siehe GoCreate-Websites-Backlog). |
 
 ---
