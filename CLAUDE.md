@@ -1,5 +1,12 @@
 # Godelmann-FAQ
 
+> **XODER-Prinzip (autark, gilt auch ohne Org-/Meta-Checkout):** Die Betriebs-SSoT dieses Repos liegt
+> im Verzeichnis **`.xoder/`**; Meta-Einstieg ist **[`.xoder/XODER.md`](.xoder/XODER.md)** (ZUERST lesen —
+> Hierarchie: Repo hier, optional Org `Godelmann/.xoder` + Meta `~/Projects`). Topologie/Zugang:
+> [`.xoder/NETWORK.md`](.xoder/NETWORK.md) · offene Betriebs-Aufgaben: [`.xoder/BACKLOG.md`](.xoder/BACKLOG.md)
+> (Fach-Backlog: [`docs/BACKLOG.md`](docs/BACKLOG.md)). Spezifikation: [`docs/ANFORDERUNGEN.md`](docs/ANFORDERUNGEN.md).
+> Nicht-Claude-Agents: [`AGENTS.md`](AGENTS.md).
+
 Öffentliches FAQ-Webmodul für godelmann.de — Web Component `<godelmann-faq>` (WHATWG Custom
 Elements + Shadow DOM), Vanilla TypeScript **ohne Framework-Dependency**. Verbindliche
 Spezifikation: `docs/ANFORDERUNGEN.md`; Agentur-Doku: `docs/EINBINDUNG.md`.
