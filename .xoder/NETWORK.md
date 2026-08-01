@@ -102,17 +102,19 @@ godelmann-faq-server (:3008, SPASS)
   - **test:** `ssh control.cockpit.plus 'ssh platform-test'` (`-i /root/.ssh/platform root@10.0.0.4`)
   - **prod:** `ssh control.cockpit.plus 'ssh godelmann-prod'` (`-i /root/.ssh/godelmann-prod root@49.12.77.51`)
 - **Service-Diagnose:** `journalctl -u godelmann-faq -f` bzw. `systemctl status godelmann-faq` auf dem jeweiligen Server.
-- **Deploy:** Der FAQ-Server lebt im **spass-Repo** (`examples/`, Plattform-Muster). Auslieferung des Widget-Bundles
-  (`dist/faq-widget.v1.js` → DIST_DIR des Servers) + Server-Deploy laufen ueber die SPASS-Deploy-Skripte auf control.
-  **[PRUEFEN]** exakter Skript-/Flag-Name fuer den FAQ-Server (Muster analog GoCreate `deploy-spass.sh gocreate [--prod]`;
-  im FAQ-Repo nicht als Skript hinterlegt).
+- **Deploy (geklaert 01.08.2026):** Frontend und Backend gehen ueber **verschiedene** Skripte auf control —
+  `deploy-godelmann.sh faq [--prod]` liefert das Widget nach `/opt/godelmann-faq/dist/`,
+  `deploy-spass.sh godelmann-faq [--prod]` das Backend. Die App-Namen unterscheiden sich (`faq` vs.
+  `godelmann-faq`). Vollstaendig: [`DEPLOYMENT.md`](DEPLOYMENT.md).
 
 ## 8. Offene Netz-Punkte (explizit offen — nicht erfunden)
 
-- **[PRUEFEN]** Finaler Prod-Vanity-Hostname (`faq.godelmann.net` live vs. geplantes `faq.godelmann.de`) nach DNS-Freigabe.
-- **[PRUEFEN]** Cloudflare-Fronting der `*.godelmann.net`-Domains (Repo belegt nur Caddy-TLS auf dem App-Server).
+- **[PRUEFEN]** Finaler Prod-Vanity-Hostname (`faq.godelmann.net` ist live; ob zusaetzlich `faq.godelmann.de`
+  gewuenscht ist, ist eine offene Produktentscheidung — kein technischer Mangel).
+- **Kein Cloudflare-Fronting** (geprueft 01.08.2026): `faq.godelmann.net` loest direkt auf `49.12.77.51`
+  auf — DNS-only, kein Proxy davor. TLS macht Caddy auf dem App-Server selbst.
 - **[PRUEFEN]** Exakte gelebte Cache-TTLs (Server 5 min vs. Caddy-Widget-Cache 1h) und Prod-Port-/Container-Details.
-- **[PRUEFEN]** Exakter Deploy-Weg/Skriptname des `godelmann-faq-server` (liegt im spass-Repo, nicht in diesem Repo).
+- ~~Deploy-Weg/Skriptname~~ — geklaert am 01.08.2026, siehe oben und [`DEPLOYMENT.md`](DEPLOYMENT.md).
 
 ---
 Siehe `.xoder/HEALTHCHECK.md` (Ende-zu-Ende-Sweep) · `.xoder/MONITORING.md` (laufende Wachpunkte) ·
