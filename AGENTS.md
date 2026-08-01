@@ -29,3 +29,9 @@ zusaetzlich `CLAUDE.md`. **Nichts hier duplizieren — dies ist ein duenner Zeig
   XODER-Pflicht). Details: org-weites `.xoder/GITHUB.md` (falls ausgecheckt).
 - **API-Stabilitaet:** `faq-widget.v1.js` ist stabil (in-place-Fixes); Breaking Changes ⇒ `faq-widget.v2.js`.
 - **CI:** Akzent-Default `--gdm-faq-accent = #E52D12` (einziger Godelmann-Rotton) — s. `CLAUDE.md`.
+
+## Tests
+
+- **Gates dieses Repos:** [`.xoder/TESTING.md`](.xoder/TESTING.md)
+- **Gesamtkontext (Org):** `Godelmann/.xoder/TESTING.md` — die vier Pruefebenen, die SPA-Falle
+  (HTTP 200 beweist keinen Endpunkt) und der Fassungsvergleich ueber Commits statt Nummern.

@@ -1,5 +1,11 @@
 # TESTING.md — Godelmann-FAQ
 
+> **Gesamtkontext (Org-Ebene):** [`Godelmann/.xoder/TESTING.md`](../../.xoder/TESTING.md) —
+> die vier Prüfebenen, **wo** der Regressionstest der KI-Berater laufen muss, die SPA-Falle
+> (HTTP 200 beweist keinen Endpunkt) und der Fassungsvergleich über Commits statt Nummern.
+> Dieses Dokument hier beschreibt die Gates **dieser** Anwendung.
+
+
 Gates + Abnahme. Konventionen/Details: `CLAUDE.md`, `docs/ANFORDERUNGEN.md`, `docs/EINBINDUNG.md`.
 
 ## Pflicht-Gates vor Commit

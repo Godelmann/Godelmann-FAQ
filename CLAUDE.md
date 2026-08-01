@@ -33,6 +33,12 @@ npm run lint         # ESLint
 Teil des BLUEITS/REDITS Fleet-Audits. **0 Findings** (0). Belege: `docs/FINDINGS-2026-07-12.md` · Tracker: `docs/AUDIT-2026-07-12.md` · Register: `BLUEITS-GmbH/.xoder/FINDINGS.md`.
 Vor Änderungen an Sicherheits-Code die Findings prüfen; Erledigtes als „resolved" markieren.
 
+## Tests
+
+- **Gates dieses Repos:** [`.xoder/TESTING.md`](.xoder/TESTING.md)
+- **Gesamtkontext (Org):** `Godelmann/.xoder/TESTING.md` — die vier Pruefebenen, die SPA-Falle
+  (HTTP 200 beweist keinen Endpunkt) und der Fassungsvergleich ueber Commits statt Nummern.
+
 ## Git-Konventionen (XODER-Standard)
 
 Verbindlich fuer Commits/PRs in diesem Repo: siehe org-weites `.xoder/GITHUB.md`.
