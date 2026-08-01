@@ -29,6 +29,7 @@ der Vite-Dev-Server liefert unter `/api/faq` Mock-Daten (nur Dev, s. `vite.confi
 | [`.xoder/XODER.md`](.xoder/XODER.md) | Prinzip, Datei-Inventar, Rolle/Befunde, Kern-Konventionen (Meta-Einstieg) |
 | [`.xoder/NETWORK.md`](.xoder/NETWORK.md) | Topologie-SSoT: Web-Component-Widget, Embed, `godelmann-faq-server` (:3008), `/api/faq`, GoCreate-Supabase als Inhaltsquelle |
 | [`.xoder/HEALTHCHECK.md`](.xoder/HEALTHCHECK.md) · [`MONITORING.md`](.xoder/MONITORING.md) · [`TESTING.md`](.xoder/TESTING.md) | Health-Sweep · Wachpunkte · Gates (tsc/lint/build) |
+| [`.xoder/VERSIONING.md`](.xoder/VERSIONING.md) | Fassungs-Logik: erhoeht wird bewusst per `npm run release:patch`, nie durch Build oder Deploy |
 | [`.xoder/TIME.md`](.xoder/TIME.md) | Zeitzonen + NTP (UTC-Hosts, keine Zeitgeber) |
 | [`.xoder/DEPLOYMENT.md`](.xoder/DEPLOYMENT.md) | Deploy-Flow: Frontend `deploy-godelmann.sh faq` · Backend `deploy-spass.sh godelmann-faq`; stabile v1-URL |
 | [`.xoder/BACKLOG.md`](.xoder/BACKLOG.md) | Betriebs-Backlog (inkl. Sektion `PARENT`) |
