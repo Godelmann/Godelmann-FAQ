@@ -1,3 +1,37 @@
+import { execSync } from 'node:child_process'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import path from 'node:path'
+
+const APP_NAME = 'godelmann-faq'
+
+// Ohne Versionsangabe liess sich von aussen nicht erkennen, WELCHER Stand
+// ausgeliefert wird — beim Abgleich test/prod blieb nur die Dateigroesse.
+const gitCommit = (() => {
+  try { return execSync('git rev-parse --short HEAD').toString().trim() }
+  catch { return 'unknown' }
+})()
+const appVersion = (() => {
+  try { return JSON.parse(readFileSync('package.json', 'utf8')).version }
+  catch { return '0.0.0' }
+})()
+const buildTime = new Date().toISOString()
+
+const emitVersionPlugin = {
+  name: 'emit-version-json',
+  apply: 'build' as const,
+  closeBundle() {
+    const outFile = path.resolve(__dirname, 'dist', 'version.json')
+    mkdirSync(path.dirname(outFile), { recursive: true })
+    writeFileSync(outFile, JSON.stringify({
+      name: APP_NAME,
+      version: appVersion,
+      commit: gitCommit,
+      built: buildTime,
+      full: `${APP_NAME}-${appVersion}-${gitCommit}-${buildTime}`,
+    }, null, 2))
+  },
+}
+
 import { defineConfig, type Plugin } from 'vite'
 
 /**
@@ -71,7 +105,8 @@ function faqDevMock(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [faqDevMock()],
+  define: { __WIDGET_VERSION__: JSON.stringify(appVersion) },
+  plugins: [emitVersionPlugin, faqDevMock()],
   server: {
     port: 5009,
     strictPort: true,

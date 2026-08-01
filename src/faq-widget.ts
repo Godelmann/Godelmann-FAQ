@@ -1,3 +1,4 @@
+declare const __WIDGET_VERSION__: string
 /**
  * <godelmann-faq> — öffentliches FAQ-Webmodul für godelmann.de
  *
@@ -315,6 +316,8 @@ export class GodelmannFaq extends HTMLElement {
   }
 
   connectedCallback(): void {
+    // Ausgelieferte Fassung von aussen ablesbar machen (Abgleich test/prod).
+    this.setAttribute('data-version', __WIDGET_VERSION__)
     void this.#load();
   }
 
