@@ -38,6 +38,8 @@ Parent-Ebene dorthin promoted (hochgezogen). Nichts geht verloren, nichts blocki
 | `.xoder/NETWORK.md` | Topologie-SSoT: Web-Component-Widget, Embed auf godelmann.de, `godelmann-faq-server` (SPASS, :3008), `/api/faq`, GoCreate-Supabase als Inhaltsquelle |
 | `.xoder/BACKLOG.md` | Projekt-Backlog (Betriebs-Sicht) inkl. Pflicht-Sektion `PARENT`; Fach-Backlog = `docs/BACKLOG.md` |
 | `.xoder/HEALTHCHECK.md` | Ende-zu-Ende-Sweep (Widget-Auslieferung, `/api/faq`, CORS, Embed-Rendering) |
+| `.xoder/DEPLOYMENT.md` | Deploy-Flow: **Frontend** `deploy-godelmann.sh faq` vs. **Backend** `deploy-spass.sh godelmann-faq`, stabile v1-URL, Fassungspruefung |
+| `.xoder/TIME.md` | Zeitzonen + NTP: UTC-Hosts, Rust ohne JVM-Problem, **keine Zeitgeber** (geprueft) |
 | `.xoder/MONITORING.md` | Laufende Wachpunkte (Publish-Roundtrip, Cache-TTL, Cert, Bundle-Groesse, Inhalts-Frische) |
 | `.xoder/TESTING.md` | Gates (tsc/lint/build) + E2E-Abnahme (curl `/api/faq`, Embed-Snippet, Rate-Limit/CORS) |
 | `docs/ANFORDERUNGEN.md` | **Verbindliche Spezifikation** (Architektur, API-Vertrag v1, Web-Components-Pflicht, Abnahme) |
