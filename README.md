@@ -33,6 +33,7 @@ der Vite-Dev-Server liefert unter `/api/faq` Mock-Daten (nur Dev, s. `vite.confi
 | [`.xoder/TIME.md`](.xoder/TIME.md) | Zeitzonen + NTP (UTC-Hosts, keine Zeitgeber) |
 | [`.xoder/DEPLOYMENT.md`](.xoder/DEPLOYMENT.md) | Deploy-Flow: Frontend `deploy-godelmann.sh faq` · Backend `deploy-spass.sh godelmann-faq`; stabile v1-URL |
 | [`.xoder/BACKLOG.md`](.xoder/BACKLOG.md) | Betriebs-Backlog (inkl. Sektion `PARENT`) |
+| [`.xoder/DEPENDENCIES.md`](.xoder/DEPENDENCIES.md) | Abhaengigkeits-Policy: Bot-Konfiguration, Cooldown-Regel, Ausnahmen-Log |
 | [`docs/ANFORDERUNGEN.md`](docs/ANFORDERUNGEN.md) | Verbindliche Spezifikation (Architektur, API-Vertrag v1, Web-Components-Pflicht, Abnahme) |
 | [`docs/EINBINDUNG.md`](docs/EINBINDUNG.md) | Integrations-Doku fuer die Agentur (Snippet, Attribute, CSS-Props, Events, CSP) |
 | [`docs/BACKLOG.md`](docs/BACKLOG.md) | Fach-/Release-Log — Release-Historie, offene Punkte (EN-FAQs, Kuratierung) |
